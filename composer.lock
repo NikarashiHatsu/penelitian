@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3e02ada9422dcfb96333c334b1ca3f2",
+    "content-hash": "54e19346f4ce6807fbc6b84baa057220",
     "packages": [
         {
             "name": "brick/math",
@@ -892,6 +892,47 @@
                 }
             ],
             "time": "2022-06-20T21:43:11+00:00"
+        },
+        {
+            "name": "hatsu-shiroyuki/tabler",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NikarashiHatsu/tabler.git",
+                "reference": "71ea296e586f58db4057f3003084cbfd64b161bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NikarashiHatsu/tabler/zipball/71ea296e586f58db4057f3003084cbfd64b161bf",
+                "reference": "71ea296e586f58db4057f3003084cbfd64b161bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "default-branch": true,
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "HatsuShiroyuki\\Tabler\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "NikarashiHatsu",
+                    "email": "yourlovelydev@gmail.com"
+                }
+            ],
+            "description": "A ready-to-use Tabler form components specifically made for Laravel.",
+            "support": {
+                "issues": "https://github.com/NikarashiHatsu/tabler/issues",
+                "source": "https://github.com/NikarashiHatsu/tabler/tree/main"
+            },
+            "time": "2022-07-24T21:01:15+00:00"
         },
         {
             "name": "laravel/breeze",
@@ -7978,7 +8019,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "hatsu-shiroyuki/tabler": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

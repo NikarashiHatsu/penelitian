@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        \HatsuShiroyuki\Tabler\App\Providers\TablerServiceProvider::class,
 
         /*
          * Application Service Providers...

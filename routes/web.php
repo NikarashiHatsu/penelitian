@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'under-construction')->name('index');
 Route::view('/landing-page', 'landing-page')->name('landing-page');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'auth'], function() {
+    Route::view('/', 'dashboard.index')->name('index');
+});
 
 require __DIR__.'/auth.php';
