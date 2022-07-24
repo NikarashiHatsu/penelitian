@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('app.name', 'Laravel') }} - Under Construction</title>
+    <link rel="shortcut icon" href="{{ asset('icon.png') }}" type="image/png">
     @vite(['resources/js/app.js', 'resources/css/app.css'])
 </head>
 <body>
