@@ -41,7 +41,7 @@ class CmsController extends Controller
         try {
             $cms = Cms::create($request->validated());
 
-            if (count($request->file)) {
+            if (isset($request->file)) {
                 for ($i = 0; $i < count($request->file); $i++) { 
                     $cms->attachments()->insert([
                         'cms_id' => $cms->id,
@@ -84,7 +84,7 @@ class CmsController extends Controller
         try {
             $cms->update($request->validated());
 
-            if (count($request->file)) {
+            if (isset($request->file)) {
                 for ($i = 0; $i < count($request->file); $i++) { 
                     $cms->attachments()->insert([
                         'cms_id' => $cms->id,
