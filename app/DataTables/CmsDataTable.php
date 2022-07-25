@@ -26,7 +26,21 @@ class CmsDataTable extends DataTable
             ->addColumn('action', 'dashboard.cms.action')
             ->addIndexColumn()
             ->setRowId('id')
-            ->rawColumns(['action', 'description']);
+            ->editColumn('feature', function(Cms $cms) {
+                $badge_class = "";
+                switch ($cms->feature) {
+                    case 'Berita': $badge_class = "bg-blue"; break;
+                    default: $badge_class = "bg-gray"; break;
+                }
+
+                return "<span class='badge $badge_class'>
+                    {$cms->feature}
+                </span>";
+            })
+            ->editColumn('description', function (Cms $cms) {
+                return mb_strimwidth(strip_tags($cms->description), 0, 255, '...');
+            })
+            ->rawColumns(['feature', 'action', 'description']);
     }
 
     /**
@@ -37,7 +51,8 @@ class CmsDataTable extends DataTable
      */
     public function query(Cms $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->newQuery()
+            ->withCount('attachments');
     }
 
     /**
@@ -74,12 +89,13 @@ class CmsDataTable extends DataTable
             Column::make('feature')->title('Fitur'),
             Column::make('writer')->title('Penulis'),
             Column::make('description')->title('Deskripsi'),
+            Column::computed('attachments_count')->title('Jumlah Lampiran'),
             Column::computed('action')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(60)
-                  ->addClass('text-center')
-                  ->title('opsi'),
+                    ->exportable(false)
+                    ->printable(false)
+                    ->width(60)
+                    ->addClass('text-center')
+                    ->title('opsi'),
         ];
     }
 

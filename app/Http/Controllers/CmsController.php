@@ -39,8 +39,20 @@ class CmsController extends Controller
     public function store(StoreCmsRequest $request)
     {
         try {
-            Cms::create($request->validated());
+            $cms = Cms::create($request->validated());
+
+            if (count($request->file)) {
+                for ($i = 0; $i < count($request->file); $i++) { 
+                    $cms->attachments()->insert([
+                        'cms_id' => $cms->id,
+                        'filename' => $request->file[$i]->getClientOriginalName(),
+                        'file' => $request->file[$i]->storePublicly('attachments'),
+                    ]);
+                }
+            }
         } catch (\Throwable $th) {
+            // dd($th->getTrace());
+            return $th->getTrace();
             return redirect()->back()->with('error', 'Gagal menambahkan konten: ' . $th->getMessage());
         }
 
@@ -71,6 +83,16 @@ class CmsController extends Controller
     {
         try {
             $cms->update($request->validated());
+
+            if (count($request->file)) {
+                for ($i = 0; $i < count($request->file); $i++) { 
+                    $cms->attachments()->insert([
+                        'cms_id' => $cms->id,
+                        'filename' => $request->file[$i]->getClientOriginalName(),
+                        'file' => $request->file[$i]->storePublicly('attachments'),
+                    ]);
+                }
+            }
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', 'Gagal mengubah konten: ' . $th->getMessage());
         }

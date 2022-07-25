@@ -4,21 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Cms extends Model
 {
     use HasFactory;
 
-    public static function boot()
+    public function attachments(): HasMany
     {
-        parent::boot();
-
-        static::saving( function($model) {
-            if ($model->file) {
-                $model->file_name = $model->file->getClientOriginalName();
-                $model->file = $model->file->storePublicly('cms');
-            }
-        });
+        return $this->hasMany(Attachment::class);
     }
 
     protected $fillable = [
@@ -26,7 +20,5 @@ class Cms extends Model
         'writer',
         'title',
         'description',
-        'file',
-        'file_name',
     ];
 }

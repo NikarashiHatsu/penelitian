@@ -28,7 +28,7 @@ class UpdateCmsRequest extends FormRequest
             'writer' => ['required', 'string'],
             'title' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'file' => ['nullable', 'file', 'max:16384'],    // 16MB
+            'file.*' => ['nullable', 'file', 'max:16384'],    // 16MB
         ];
     }
 }
