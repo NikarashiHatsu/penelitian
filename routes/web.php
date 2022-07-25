@@ -18,6 +18,7 @@ Route::view('/landing-page', 'landing-page')->name('landing-page');
 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'auth'], function() {
     Route::view('/', 'dashboard.index')->name('index');
+    Route::resource('/cms', \App\Http\Controllers\CmsController::class)->except('show')->parameter('cms', 'cms');
 });
 
 require __DIR__.'/auth.php';

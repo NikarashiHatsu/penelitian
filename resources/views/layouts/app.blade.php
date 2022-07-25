@@ -1,6 +1,7 @@
 <x-tabler::layouts.vertical-transparent>
     <x-slot name="head">
         <link rel="shortcut icon" href="{{ asset('icon.png') }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ asset('css/datatables.min.css') }}">
     </x-slot>
 
     <x-slot name="scripts">
@@ -10,7 +11,8 @@
     <x-slot name="logo">
         <h1 class="navbar-brand navbar-brand-autodark">
             <a href="{{ route('dashboard.index') }}">
-                <img src="{{ asset('icon.png') }}" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                <img src="{{ asset('icon.png') }}" width="110" height="32" alt="Tabler"
+                    class="navbar-brand-image">
             </a>
         </h1>
     </x-slot>
@@ -18,7 +20,7 @@
     <x-slot name="title">
         <div class="page-header d-print-none">
             <div class="row align-items-center">
-                {{ $title ?? "" }}
+                {{ $title ?? '' }}
             </div>
         </div>
     </x-slot>
@@ -32,18 +34,14 @@
                 <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
             </svg>' />
 
-        <x-tabler::layouts.menu-dropdown title="Data Master" :active="request()->routeIs('master.*')"
-            icon='<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-database" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <x-tabler::layouts.menu title="CMS" :route="route('dashboard.cms.index')" :active="request()->routeIs('dashboard.cms.*')"
+            icon='<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-text" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <ellipse cx="12" cy="6" rx="8" ry="3"></ellipse>
-                <path d="M4 6v6a8 3 0 0 0 16 0v-6"></path>
-                <path d="M4 12v6a8 3 0 0 0 16 0v-6"></path>
-            </svg>'>
-            <x-tabler::layouts.menu-dropdown-item :route="'javascript:void(0)'" :active="false" title="Landing Page" />
-            <x-tabler::layouts.menu-dropdown-item :route="'javascript:void(0)'" :active="false" title="Section" />
-            <x-tabler::layouts.menu-dropdown-item :route="'javascript:void(0)'" :active="false" title="Kontak" />
-            <x-tabler::layouts.menu-dropdown-item :route="'javascript:void(0)'" :active="false" title="Sosial Media"/>
-        </x-tabler::layouts.menu-dropdown>
+                <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"></path>
+                <rect x="9" y="3" width="6" height="4" rx="2"></rect>
+                <path d="M9 12h6"></path>
+                <path d="M9 16h6"></path>
+            </svg>' />
 
         <li class="nav-item" x-data>
             <form action="{{ route('logout') }}" method="post" x-ref="formLogout">
@@ -68,4 +66,40 @@
     </x-slot>
 
     {{ $slot }}
+
+    <x-slot name="scripts">
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/datatables.min.js') }}"></script>
+        <script src="{{ asset('js/ckeditor.js') }}"></script>
+        <script>
+            const watchdog = new CKSource.EditorWatchdog();
+
+            window.watchdog = watchdog;
+
+            watchdog.setCreator((element, config) => {
+                return CKSource.Editor
+                    .create(element, config)
+                    .then(editor => {
+                        return editor;
+                    })
+            });
+
+            watchdog.setDestructor(editor => {
+                return editor.destroy();
+            });
+
+            watchdog.on('error', handleError);
+
+            function handleError(error) {
+                console.error('Oops, something went wrong!');
+                console.error(
+                    'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:'
+                );
+                console.warn('Build id: rfjdnu3tpy1i-kaexhdnv3vae');
+                console.error(error);
+            }
+        </script>
+
+        {{ $scripts ?? '' }}
+    </x-slot>
 </x-tabler::layouts.vertical-transparent>
