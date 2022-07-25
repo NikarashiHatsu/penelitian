@@ -1,4 +1,8 @@
 <x-tabler::layouts.vertical-transparent>
+    <x-slot name="head">
+        <link rel="shortcut icon" href="{{ asset('icon.png') }}" type="image/x-icon">
+    </x-slot>
+
     <x-slot name="scripts">
         @vite(['resources/js/app.js'])
     </x-slot>

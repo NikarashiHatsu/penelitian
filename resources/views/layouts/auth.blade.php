@@ -14,10 +14,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{ config('app.name', 'Laravel') }} - Sign In</title>
-    <link href="{{ asset('tabler/css/tabler.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('tabler/css/tabler-flags.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('tabler/css/tabler-payments.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('tabler/css/tabler-vendors.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('vendor/tabler/css/tabler.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('vendor/tabler/css/tabler-flags.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('vendor/tabler/css/tabler-payments.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('vendor/tabler/css/tabler-vendors.min.css') }}" rel="stylesheet" />
     @vite(['resources/js/app.js'])
 </head>
 
@@ -28,6 +28,6 @@
         </div>
     </div>
 
-    <script src="{{ asset('tabler/js/tabler.min.js') }}"></script>
+    <script src="{{ asset('vendor/tabler/js/tabler.min.js') }}"></script>
 </body>
 </html>
