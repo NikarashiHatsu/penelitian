@@ -1,6 +1,18 @@
 <x-app-layout>
-    <form action="{{ route('logout') }}" method="post">
-        @csrf
-        <button>logout</button>
-    </form>
+    <x-slot name="title">
+        <div class="col">
+            <div class="page-pretitle">
+                Overview
+            </div>
+            <h2 class="page-title">
+                Dashboard
+            </h2>
+        </div>
+    </x-slot>
+
+    <div class="card">
+        <div class="card-body">
+            Selamat datang, {{ auth()->user()->name }}
+        </div>
+    </div>
 </x-app-layout>
