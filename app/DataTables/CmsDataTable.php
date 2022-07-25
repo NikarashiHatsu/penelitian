@@ -86,7 +86,8 @@ class CmsDataTable extends DataTable
     {
         return [
             Column::computed('DT_RowIndex')->title('#'),
-            Column::make('feature')->title('Fitur'),
+            Column::make('feature')->title('Tipe'),
+            Column::make('title')->title('Judul'),
             Column::make('writer')->title('Penulis'),
             Column::make('description')->title('Deskripsi'),
             Column::computed('attachments_count')->title('Jumlah Lampiran'),
