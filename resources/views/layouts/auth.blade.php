@@ -18,6 +18,7 @@
     <link href="{{ asset('vendor/tabler/css/tabler-flags.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendor/tabler/css/tabler-payments.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendor/tabler/css/tabler-vendors.min.css') }}" rel="stylesheet" />
+    <link rel="shortcut icon" href="{{ asset('icon.png') }}" type="image/x-icon">
     @vite(['resources/js/app.js'])
 </head>
 
