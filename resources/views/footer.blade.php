@@ -1,4 +1,4 @@
-<footer class="u-clearfix u-footer u-palette-1-base !bg-blue-100 border-t border-t-blue-300" id="sec-3af3">
+<footer class="u-clearfix u-footer u-palette-1-base !bg-gray-100 border-t border-t-gray-300" id="sec-3af3">
     <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
             <div class="u-gutter-0 u-layout">
