@@ -6,6 +6,7 @@ use App\Models\Cms;
 use App\Models\Contact;
 use App\Models\Footer;
 use App\Models\Gallery;
+use App\Models\Hero;
 use App\Models\VisionMission;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,10 @@ class IndexController extends Controller
     public function landing_page(Request $request)
     {
         return view('landing-page', [
+            // Hero
+            'hero_title' => Hero::where('type', 'Judul')->first()->content,
+            'hero_description' => Hero::where('type', 'Deskripsi')->first()->content,
+
             // Visi Misi Tujuan
             'vision' => VisionMission::where('type', 'vision')->first()->description,
             'mission' => VisionMission::where('type', 'mission')->first()->description,

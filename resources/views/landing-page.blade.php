@@ -13,7 +13,10 @@
 </head>
 
 <body class="u-body u-xl-mode" style="font-size: 16px;">
-    @include('hero')
+    @include('hero', [
+        'hero_title' => $hero_title,
+        'hero_description' => $hero_description,
+    ])
 
     @include('program')
 
