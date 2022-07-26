@@ -21,7 +21,9 @@
         'hero_logos' => $hero_logos,
     ])
 
-    @include('program')
+    @include('skema-penelitian', [
+        'skema_penelitians' => $skema_penelitians,
+    ])
 
     @include('fokus')
 

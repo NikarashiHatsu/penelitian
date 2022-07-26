@@ -25,6 +25,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
     Route::resource('vision-mission', \App\Http\Controllers\VisionMissionController::class)->except('show');
     Route::resource('footer', \App\Http\Controllers\FooterController::class)->except('show');
     Route::resource('hero', \App\Http\Controllers\HeroController::class)->except('show');
+    Route::resource('skema-penelitian', \App\Http\Controllers\SkemaPenelitianController::class)->except('show');
 });
 
 require __DIR__.'/auth.php';

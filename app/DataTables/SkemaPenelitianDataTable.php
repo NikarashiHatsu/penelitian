@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Hero;
+use App\Models\SkemaPenelitian;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\EloquentDataTable;
@@ -13,7 +13,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class HeroDataTable extends DataTable
+class SkemaPenelitianDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -24,27 +24,22 @@ class HeroDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'dashboard.hero.action')
+            ->addColumn('action', 'dashboard.skema-penelitian.action')
             ->addIndexColumn()
-            ->editColumn('content', function(Hero $hero) {
-                if ($hero->type == "Gambar" || $hero->type == "Logo") {
-                    $gambar = Storage::url($hero->content);
-                    return "<img src='$gambar' style='width: 100px; height: 100px; object-fit:cover; border-radius: 4px;' />";
-                }
-
-                return $hero->content;
+            ->editColumn('file', function(SkemaPenelitian $skemaPenelitian) {
+                return "<img src='{$skemaPenelitian->file}' style='width: 100px; height: 100px; object-fit:cover; border-radius: 4px;' />";
             })
             ->setRowId('id')
-            ->rawColumns(['action', 'content']);
+            ->rawColumns(['action', 'file']);
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Hero $model
+     * @param \App\Models\SkemaPenelitian $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Hero $model): QueryBuilder
+    public function query(SkemaPenelitian $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -57,7 +52,7 @@ class HeroDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('hero-table')
+                    ->setTableId('skemaPenelitian-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Bfrtip')
@@ -80,8 +75,9 @@ class HeroDataTable extends DataTable
     {
         return [
             Column::computed('DT_RowIndex')->title('#'),
-            Column::make('type')->title('Tipe'),
-            Column::make('content')->title('Isi'),
+            Column::make('file')->title('File'),
+            Column::make('title')->title('Judul'),
+            Column::make('description')->title('Deskripsi'),
             Column::computed('action')
                     ->exportable(false)
                     ->printable(false)
@@ -98,6 +94,6 @@ class HeroDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Hero_' . date('YmdHis');
+        return 'SkemaPenelitian_' . date('YmdHis');
     }
 }

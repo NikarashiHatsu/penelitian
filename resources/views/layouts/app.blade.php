@@ -31,6 +31,30 @@
                 <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
             </svg>' />
 
+        <x-tabler::layouts.menu title="Hero" :route="route('dashboard.hero.index')" :active="request()->routeIs('dashboard.hero.*')"
+            icon='<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-section" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M20 20h.01"></path>
+                <path d="M4 20h.01"></path>
+                <path d="M8 20h.01"></path>
+                <path d="M12 20h.01"></path>
+                <path d="M16 20h.01"></path>
+                <path d="M20 4h.01"></path>
+                <path d="M4 4h.01"></path>
+                <path d="M8 4h.01"></path>
+                <path d="M12 4h.01"></path>
+                <path d="M16 4l0 0"></path>
+                <rect x="4" y="8" width="16" height="8" rx="1"></rect>
+            </svg>' />
+
+        <x-tabler::layouts.menu title="Skema Penelitian" :route="route('dashboard.skema-penelitian.index')" :active="request()->routeIs('dashboard.skema-penelitian.*')"
+            icon='<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-route" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="6" cy="19" r="2"></circle>
+                <circle cx="18" cy="5" r="2"></circle>
+                <path d="M12 19h4.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h3.5"></path>
+            </svg>' />
+
         <x-tabler::layouts.menu title="CMS" :route="route('dashboard.cms.index')" :active="request()->routeIs('dashboard.cms.*')"
             icon='<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-text" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -61,22 +85,6 @@
                 <path d="M16.5 17c-2.485 0 -4.5 -1.974 -4.5 -4.409v-.591h8.397c.333 0 .603 .265 .603 .591c0 2.435 -2.015 4.409 -4.5 4.409z"></path>
                 <path d="M7 16.5c0 -2.485 1.972 -4.5 4.405 -4.5h.595v8.392a0.61 .61 0 0 1 -.173 .431a0.584 .584 0 0 1 -.422 .177c-2.433 0 -4.405 -2.015 -4.405 -4.5z"></path>
                 <path d="M17 7.5c0 2.485 -1.972 4.5 -4.405 4.5h-.595v-8.397a0.61 .61 0 0 1 .175 -.428a0.584 .584 0 0 1 .42 -.175c2.433 0 4.405 2.015 4.405 4.5z"></path>
-            </svg>' />
-
-        <x-tabler::layouts.menu title="Hero" :route="route('dashboard.hero.index')" :active="request()->routeIs('dashboard.hero.*')"
-            icon='<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-section" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M20 20h.01"></path>
-                <path d="M4 20h.01"></path>
-                <path d="M8 20h.01"></path>
-                <path d="M12 20h.01"></path>
-                <path d="M16 20h.01"></path>
-                <path d="M20 4h.01"></path>
-                <path d="M4 4h.01"></path>
-                <path d="M8 4h.01"></path>
-                <path d="M12 4h.01"></path>
-                <path d="M16 4l0 0"></path>
-                <rect x="4" y="8" width="16" height="8" rx="1"></rect>
             </svg>' />
 
         <x-tabler::layouts.menu title="Footer" :route="route('dashboard.footer.index')" :active="request()->routeIs('dashboard.footer.*')"

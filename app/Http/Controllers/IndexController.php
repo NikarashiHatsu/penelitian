@@ -7,6 +7,7 @@ use App\Models\Contact;
 use App\Models\Footer;
 use App\Models\Gallery;
 use App\Models\Hero;
+use App\Models\SkemaPenelitian;
 use App\Models\VisionMission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -24,6 +25,9 @@ class IndexController extends Controller
                 $logo->content = Storage::url($logo->content);
                 return $logo;
             }),
+
+            // Skema Penelitian
+            'skema_penelitians' => SkemaPenelitian::all(),
 
             // Visi Misi Tujuan
             'vision' => VisionMission::where('type', 'vision')->first()->description,
