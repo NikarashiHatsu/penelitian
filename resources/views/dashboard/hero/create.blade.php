@@ -18,7 +18,7 @@
                 Tambah Data Baru
             </div>
             <h2 class="page-title">
-                Footer
+                Hero
             </h2>
         </div>
     </x-slot>
@@ -30,27 +30,36 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('dashboard.hero.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.hero.store') }}" method="post" enctype="multipart/form-data" x-data="{ isImage: false }">
                 @csrf
                 <div class="row">
                     <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
                         <x-tabler::form.input.select
+                            x-on:change="isImage = $el.value == 'Gambar' ? true : false"
                             name="type"
                             label="Tipe"
                             required
                         >
                             <option {{ old('type') == "Judul" ? "selected" : "" }} value="Judul">Judul</option>
                             <option {{ old('type') == "Deskripsi" ? "selected" : "" }} value="Deskripsi">Deskripsi</option>
+                            <option {{ old('type') == "Gambar" ? "selected" : "" }} value="Gambar">Gambar</option>
                         </x-tabler::form.input.select>
                     </div>
-                    <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3" x-show="!isImage">
                         <x-tabler::form.input.text
                             name="content"
                             label="Konten"
                             placeholder="Masukkan isi..."
                             value="{{ old('content') }}"
-                            required
                         />
+                    </div>
+                    <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3" x-show="isImage">
+                        <div class="mb-3">
+                            <label for="image" class="form-label">
+                                Gambar
+                            </label>
+                            <input type="file" name="image" id="image" class="form-control">
+                        </div>
                     </div>
                     <div class="col-sm-12 d-flex justify-content-end">
                         <button class="btn btn-primary">

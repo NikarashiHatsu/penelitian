@@ -25,7 +25,8 @@ class StoreHeroRequest extends FormRequest
     {
         return [
             'type' => ['required', 'string'],
-            'content' => ['required', 'string'],
+            'content' => ['nullable', 'required_unless:type,Gambar', 'string'],
+            'image' => ['nullable', 'required_if:type,Gambar', 'image', 'max:4096'],
         ];
     }
 }

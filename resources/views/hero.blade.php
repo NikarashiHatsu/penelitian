@@ -1,7 +1,8 @@
 <section class="u-clearfix u-valign-middle-lg u-valign-middle-xl u-section-2" id="carousel_fceb">
+
     <img
         class="u-expanded-height-lg u-expanded-height-xl u-expanded-height-xs u-image u-image-1"
-        src="//images01.nicepage.com/67c0373aa72035151eb7ee36/3c02f2e1d608563fa5a7274c/weee.jpg"
+        src="{{ $hero_image }}"
     />
 
     <div class="u-align-left u-container-style u-group u-opacity u-opacity-60 u-shape-rectangle u-white u-group-1">

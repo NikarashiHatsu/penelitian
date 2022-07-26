@@ -9,6 +9,7 @@ use App\Models\Gallery;
 use App\Models\Hero;
 use App\Models\VisionMission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class IndexController extends Controller
 {
@@ -18,6 +19,7 @@ class IndexController extends Controller
             // Hero
             'hero_title' => Hero::where('type', 'Judul')->first()->content,
             'hero_description' => Hero::where('type', 'Deskripsi')->first()->content,
+            'hero_image' => Storage::url(Hero::where('type', 'Gambar')->first()->content),
 
             // Visi Misi Tujuan
             'vision' => VisionMission::where('type', 'vision')->first()->description,

@@ -38,7 +38,11 @@ class HeroController extends Controller
     public function store(StoreHeroRequest $request)
     {
         try {
-            Hero::create($request->validated());
+            $hero = Hero::create($request->validated());
+
+            if ($request->hasFile('image')) {
+                $hero->content = $request->file('image')->storePublicly('hero');
+            }
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', 'Gagal menambahkan data hero: ' . $th->getMessage());
         }
@@ -70,6 +74,12 @@ class HeroController extends Controller
     {
         try {
             $hero->update($request->validated());
+
+            if ($request->hasFile('image')) {
+                $hero->update([
+                    'content' => $request->file('image')->storePublicly('hero')
+                ]);
+            }
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', 'Gagal mengubah data hero: ' . $th->getMessage());
         }
