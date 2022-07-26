@@ -29,7 +29,10 @@
 
     @include('berita', ['beritas' => $beritas])
 
-    @include('galeri')
+    @include('galeri', [
+        'gallery_description' => $gallery_description,
+        'galleries' => $galleries,
+    ])
 
     @include('counter')
 

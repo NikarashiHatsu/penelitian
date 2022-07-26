@@ -46,6 +46,15 @@
                 <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
             </svg>' />
 
+        <x-tabler::layouts.menu title="Galeri" :route="route('dashboard.gallery.index')" :active="request()->routeIs('dashboard.gallery.*')"
+            icon='<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google-photos" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M7.5 7c2.485 0 4.5 1.974 4.5 4.409v.591h-8.397a0.61 .61 0 0 1 -.426 -.173a0.585 .585 0 0 1 -.177 -.418c0 -2.435 2.015 -4.409 4.5 -4.409z"></path>
+                <path d="M16.5 17c-2.485 0 -4.5 -1.974 -4.5 -4.409v-.591h8.397c.333 0 .603 .265 .603 .591c0 2.435 -2.015 4.409 -4.5 4.409z"></path>
+                <path d="M7 16.5c0 -2.485 1.972 -4.5 4.405 -4.5h.595v8.392a0.61 .61 0 0 1 -.173 .431a0.584 .584 0 0 1 -.422 .177c-2.433 0 -4.405 -2.015 -4.405 -4.5z"></path>
+                <path d="M17 7.5c0 2.485 -1.972 4.5 -4.405 4.5h-.595v-8.397a0.61 .61 0 0 1 .175 -.428a0.584 .584 0 0 1 .42 -.175c2.433 0 4.405 2.015 4.405 4.5z"></path>
+            </svg>' />
+
         <li class="nav-item" x-data>
             <form action="{{ route('logout') }}" method="post" x-ref="formLogout">
                 @csrf
