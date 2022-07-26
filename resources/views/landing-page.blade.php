@@ -33,7 +33,10 @@
 
     @include('counter')
 
-    @include('kontak')
+    @include('kontak', [
+        'phones' => $phones,
+        'addresses' => $addresses,
+    ])
 
     @include('footer', [
         'facebook' => $facebook,

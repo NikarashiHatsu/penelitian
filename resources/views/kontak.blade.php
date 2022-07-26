@@ -23,8 +23,11 @@
                         Telepon
                     </h5>
                     <p class="u-text u-text-body-alt-color u-text-3">
-                        1 (234) 567-891,<br>
-                        1 (234) 987-654
+                        <ul>
+                            @foreach ($phones as $phone)
+                                <li style="color: white; margin-bottom: 0.25rem !important; margin-top: 0 !important;">{{ $phone->content }}</li>
+                            @endforeach
+                        </ul>
                     </p>
                 </div>
             </div>
@@ -39,7 +42,9 @@
                         Lokasi
                     </h5>
                     <p class="u-text u-text-body-alt-color u-text-5">
-                        121 Rock Sreet, 21 Avenue, New York, NY 92103-9000
+                        @foreach ($addresses as $address)
+                            <p style="color: white;">{{ $address->content }}</p>
+                        @endforeach
                     </p>
                 </div>
             </div>
