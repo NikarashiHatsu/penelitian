@@ -39,10 +39,10 @@ class IndexController extends Controller
 
             // Social Medias
             'footer_content' => Footer::where('type', 'Description')->first()->content,
-            'facebook' =>  Footer::where('type', 'Facebook')->first()->content,
-            'twitter' =>  Footer::where('type', 'Twitter')->first()->content,
-            'instagram' =>  Footer::where('type', 'Instagram')->first()->content,
-            'linkedIn' =>  Footer::where('type', 'LinkedIn')->first()->content,
+            'facebook' =>  strip_tags(Footer::where('type', 'Facebook')->first()->content),
+            'twitter' =>  strip_tags(Footer::where('type', 'Twitter')->first()->content),
+            'instagram' =>  strip_tags(Footer::where('type', 'Instagram')->first()->content),
+            'linkedIn' =>  strip_tags(Footer::where('type', 'LinkedIn')->first()->content),
         ]);
     }
 }

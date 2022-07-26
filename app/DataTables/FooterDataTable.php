@@ -25,7 +25,8 @@ class FooterDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addColumn('action', 'dashboard.footer.action')
             ->addIndexColumn()
-            ->setRowId('id');
+            ->setRowId('id')
+            ->rawColumns(['action', 'content']);
     }
 
     /**

@@ -35,7 +35,8 @@ class HeroDataTable extends DataTable
                 return "<img src='$gambar' style='width: 100px; height: 100px; object-fit:cover; border-radius: 4px;' />";
             })
             ->rawColumns(['action', 'content'])
-            ->setRowId('id');
+            ->setRowId('id')
+            ->rawColumns(['action', 'content']);
     }
 
     /**

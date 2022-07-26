@@ -47,14 +47,12 @@
                             <option {{ $footer->type == "LinkedIn" ? "selected" : "" }} value="LinkedIn">LinkedIn</option>
                         </x-tabler::form.input.select>
                     </div>
-                    <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
-                        <x-tabler::form.input.text
+                    <div class="col-sm-12" x-show="!isImage">
+                        <x-tabler::form.input.textarea
                             name="content"
                             label="Konten"
                             placeholder="Masukkan isi..."
-                            value="{{ $footer->content }}"
-                            required
-                        />
+                        >{{ $footer->content }}</x-tabler::form.input.textarea>
                     </div>
                     <div class="col-sm-12 d-flex justify-content-end">
                         <button class="btn btn-primary">
@@ -65,4 +63,16 @@
             </form>
         </div>
     </div>
+
+    <x-slot name="scripts">
+        <script>
+            ["content"].forEach(function(field) {
+                watchdog
+                    .create(document.querySelector(`textarea[name='${field}']`), {
+                        licenseKey: '',
+                    })
+                    .catch(handleError);
+            });
+        </script>
+    </x-slot>
 </x-app-layout>
