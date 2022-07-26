@@ -42,6 +42,7 @@
     ])
 
     @include('footer', [
+        'footer_content' => $footer_content,
         'facebook' => $facebook,
         'twitter' => $twitter,
         'instagram' => $instagram,

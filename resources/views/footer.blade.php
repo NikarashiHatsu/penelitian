@@ -6,19 +6,14 @@
                     <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-20 u-size-20-md u-layout-cell-1">
                         <div class="u-container-layout u-valign-middle u-container-layout-1">
                             <p class="u-small-text u-text u-text-variant u-text-1">
-                                Isi footer. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda quisquam qui accusantium veniam eius, reprehenderit, nesciunt doloribus totam laborum mollitia delectus repellat atque dolore soluta. Est laudantium magni minus voluptates?
+                                {{ $footer_content }}
                             </p>
                         </div>
                     </div>
 
                     <div class="u-container-style u-layout-cell u-size-20 u-size-20-md u-layout-cell-2">
                         <div class="u-container-layout u-valign-middle u-container-layout-2">
-                            <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="80" data-image-height="40">
-                                <img
-                                    src="//capp.nicepage.com/86e268af47b37b6e08d069b098cf0b788f97b0c2/images/default-logo.png"
-                                    class="u-logo-image u-logo-image-1"
-                                />
-                            </a>
+                            <img src="{{ asset('icon.png') }}" alt="" width="150" height="150" style="margin: 0 auto;">
                         </div>
                     </div>
 

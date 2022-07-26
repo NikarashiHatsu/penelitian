@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cms;
 use App\Models\Contact;
+use App\Models\Footer;
 use App\Models\Gallery;
 use App\Models\VisionMission;
 use Illuminate\Http\Request;
@@ -30,10 +31,11 @@ class IndexController extends Controller
             'addresses' => Contact::where('type', 'Address')->get(),
 
             // Social Medias
-            'facebook' => null,
-            'twitter' => null,
-            'instagram' => null,
-            'linkedIn' => null,
+            'footer_content' => Footer::where('type', 'Description')->first()->content,
+            'facebook' =>  Footer::where('type', 'Facebook')->first()->content,
+            'twitter' =>  Footer::where('type', 'Twitter')->first()->content,
+            'instagram' =>  Footer::where('type', 'Instagram')->first()->content,
+            'linkedIn' =>  Footer::where('type', 'LinkedIn')->first()->content,
         ]);
     }
 }

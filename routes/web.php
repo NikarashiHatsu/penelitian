@@ -23,6 +23,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
     Route::resource('contact', \App\Http\Controllers\ContactController::class)->except('show');
     Route::resource('gallery', \App\Http\Controllers\GalleryController::class)->except('show');
     Route::resource('vision-mission', \App\Http\Controllers\VisionMissionController::class)->except('show');
+    Route::resource('footer', \App\Http\Controllers\FooterController::class)->except('show');
 });
 
 require __DIR__.'/auth.php';
