@@ -20,9 +20,9 @@
     @include('fokus')
 
     @include('visi-misi-tujuan', [
-        'visi' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin justo risus, luctus ut faucibus at, iaculis ut neque. Nulla ut.',
-        'misi' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus, nulla sed sagittis porta, justo quam elementum orci, eu efficitur.',
-        'tujuan' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum lorem sed vulputate tincidunt. Donec ullamcorper sapien ex, vel faucibus.',
+        'visi' => $vision,
+        'misi' => $mission,
+        'tujuan' => $target,
     ])
 
     @include('peneliti')

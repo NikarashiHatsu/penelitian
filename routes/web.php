@@ -22,6 +22,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
     Route::resource('cms.attachment', \App\Http\Controllers\AttachmentController::class)->only('destroy')->parameter('cms', 'cms');
     Route::resource('contact', \App\Http\Controllers\ContactController::class)->except('show');
     Route::resource('gallery', \App\Http\Controllers\GalleryController::class)->except('show');
+    Route::resource('vision-mission', \App\Http\Controllers\VisionMissionController::class)->except('show');
 });
 
 require __DIR__.'/auth.php';

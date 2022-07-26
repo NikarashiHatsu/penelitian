@@ -7,8 +7,8 @@
                     <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
                         <h2 class="u-custom-font u-font-montserrat u-text u-text-1">01</h2>
                         <h5 class="u-custom-font u-font-montserrat u-text u-text-2">Visi</h5>
-                        <p class="u-text u-text-9">
-                            {{ $visi }}
+                        <p class="u-text u-text-9" style="color: white !important;">
+                            {!! $visi !!}
                         </p>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                         <h2 class="u-custom-font u-font-montserrat u-text u-text-4">02</h2>
                         <h5 class="u-custom-font u-font-montserrat u-text u-text-5">Misi</h5>
                         <p class="u-text u-text-9">
-                            {{ $misi }}
+                            {!! $misi !!}
                         </p>
                     </div>
                 </div>
@@ -27,8 +27,8 @@
                     <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
                         <h2 class="u-custom-font u-font-montserrat u-text u-text-7">03</h2>
                         <h5 class="u-custom-font u-font-montserrat u-text u-text-8">Tujuan</h5>
-                        <p class="u-text u-text-9">
-                            {{ $tujuan }}
+                        <p class="u-text u-text-9" style="color: white !important;">
+                            {!! $tujuan !!}
                         </p>
                     </div>
                 </div>

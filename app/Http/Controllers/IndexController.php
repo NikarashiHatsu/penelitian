@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cms;
 use App\Models\Contact;
 use App\Models\Gallery;
+use App\Models\VisionMission;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -12,6 +13,11 @@ class IndexController extends Controller
     public function landing_page(Request $request)
     {
         return view('landing-page', [
+            // Visi Misi Tujuan
+            'vision' => VisionMission::where('type', 'vision')->first()->description,
+            'mission' => VisionMission::where('type', 'mission')->first()->description,
+            'target' => VisionMission::where('type', 'target')->first()->description,
+
             // News
             'beritas' => Cms::where('feature', 'berita')->latest()->limit(6)->get(),
 
