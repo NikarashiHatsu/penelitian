@@ -4,6 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Hero;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
@@ -25,6 +26,15 @@ class HeroDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addColumn('action', 'dashboard.hero.action')
             ->addIndexColumn()
+            ->editColumn('content', function(Hero $hero) {
+                if ($hero->type != "Gambar") {
+                    return $hero->content;
+                }
+
+                $gambar = Storage::url($hero->content);
+                return "<img src='$gambar' style='width: 100px; height: 100px; object-fit:cover; border-radius: 4px;' />";
+            })
+            ->rawColumns(['action', 'content'])
             ->setRowId('id');
     }
 
