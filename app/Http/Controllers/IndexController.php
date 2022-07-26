@@ -20,6 +20,10 @@ class IndexController extends Controller
             'hero_title' => Hero::where('type', 'Judul')->first()->content,
             'hero_description' => Hero::where('type', 'Deskripsi')->first()->content,
             'hero_image' => Storage::url(Hero::where('type', 'Gambar')->first()->content),
+            'hero_logos' => Hero::where('type', 'Logo')->orderByDesc('created_at')->get()->map(function($logo) {
+                $logo->content = Storage::url($logo->content);
+                return $logo;
+            }),
 
             // Visi Misi Tujuan
             'vision' => VisionMission::where('type', 'vision')->first()->description,

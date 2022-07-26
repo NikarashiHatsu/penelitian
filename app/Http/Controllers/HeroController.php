@@ -41,7 +41,9 @@ class HeroController extends Controller
             $hero = Hero::create($request->validated());
 
             if ($request->hasFile('image')) {
-                $hero->content = $request->file('image')->storePublicly('hero');
+                $hero->update([
+                    'content' => $request->file('image')->storePublicly('hero')
+                ]);
             }
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', 'Gagal menambahkan data hero: ' . $th->getMessage());

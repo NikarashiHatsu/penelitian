@@ -18,6 +18,7 @@
         'hero_title' => $hero_title,
         'hero_description' => $hero_description,
         'hero_image' => $hero_image,
+        'hero_logos' => $hero_logos,
     ])
 
     @include('program')

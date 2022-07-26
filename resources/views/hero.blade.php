@@ -1,12 +1,17 @@
-<section class="u-clearfix u-valign-middle-lg u-valign-middle-xl u-section-2" id="carousel_fceb">
-
+<section class="u-clearfix u-valign-middle-lg u-valign-middle-xl u-section-2 relative" id="carousel_fceb">
     <img
         class="u-expanded-height-lg u-expanded-height-xl u-expanded-height-xs u-image u-image-1"
         src="{{ $hero_image }}"
     />
 
     <div class="u-align-left u-container-style u-group u-opacity u-opacity-60 u-shape-rectangle u-white u-group-1">
-        <div class="u-container-layout u-valign-middle u-container-layout-1">
+        <div class="u-container-layout u-valign-top u-container-layout-1 -mt-16">
+            <div class="flex mb-16">
+                @foreach ($hero_logos as $logo)
+                    <img src="{{ asset($logo->content) }}" class="h-16 object-contain">
+                @endforeach
+            </div>
+
             <h1 class="u-text u-text-palette-1-base u-text-1">{{ $hero_title }}</h1>
             <p class="u-text u-text-2">{{ $hero_description }}</p>
             <a

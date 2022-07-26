@@ -27,12 +27,12 @@ class HeroDataTable extends DataTable
             ->addColumn('action', 'dashboard.hero.action')
             ->addIndexColumn()
             ->editColumn('content', function(Hero $hero) {
-                if ($hero->type != "Gambar") {
-                    return $hero->content;
+                if ($hero->type == "Gambar" || $hero->type == "Logo") {
+                    $gambar = Storage::url($hero->content);
+                    return "<img src='$gambar' style='width: 100px; height: 100px; object-fit:cover; border-radius: 4px;' />";
                 }
 
-                $gambar = Storage::url($hero->content);
-                return "<img src='$gambar' style='width: 100px; height: 100px; object-fit:cover; border-radius: 4px;' />";
+                return $hero->content;
             })
             ->rawColumns(['action', 'content'])
             ->setRowId('id')

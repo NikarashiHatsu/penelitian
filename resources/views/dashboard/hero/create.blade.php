@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
                         <x-tabler::form.input.select
-                            x-on:change="isImage = $el.value == 'Gambar' ? true : false"
+                            x-on:change="isImage = ['Gambar', 'Logo'].find((logo) => logo == $el.value) ? true : false"
                             name="type"
                             label="Tipe"
                             required
@@ -43,6 +43,7 @@
                             <option {{ old('type') == "Judul" ? "selected" : "" }} value="Judul">Judul</option>
                             <option {{ old('type') == "Deskripsi" ? "selected" : "" }} value="Deskripsi">Deskripsi</option>
                             <option {{ old('type') == "Gambar" ? "selected" : "" }} value="Gambar">Gambar</option>
+                            <option {{ old('type') == "Logo" ? "selected" : "" }} value="Logo">Logo</option>
                         </x-tabler::form.input.select>
                     </div>
                     <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3" x-show="isImage">

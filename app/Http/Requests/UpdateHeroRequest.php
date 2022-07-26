@@ -25,8 +25,8 @@ class UpdateHeroRequest extends FormRequest
     {
         return [
             'type' => ['required', 'string'],
-            'content' => ['nullable', 'required_unless:type,Gambar', 'string'],
-            'image' => ['nullable', 'required_if:type,Gambar', 'image', 'max:4096'],
+            'content' => ['nullable', 'required_unless:type,Gambar,Logo', 'string'],
+            'image' => ['nullable', 'required_if:type,Gambar,Logo', 'image', 'max:4096'],
         ];
     }
 }
