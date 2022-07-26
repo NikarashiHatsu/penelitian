@@ -4,6 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Gallery;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
@@ -28,7 +29,15 @@ class GalleryDataTable extends DataTable
             ->editColumn('created_at', function(Gallery $gallery) {
                 return $gallery->created_at->isoFormat('LL');
             })
-            ->setRowId('id');
+            ->editColumn('file', function(Gallery $gallery) {
+                if ($gallery->type != "Image") {
+                    return "-";
+                }
+
+                return "<img src='{$gallery->file}' style='width: 100px; height: 100px; object-fit:cover; border-radius: 4px;' />";
+            })
+            ->setRowId('id')
+            ->rawColumns(['action', 'file']);
     }
 
     /**
