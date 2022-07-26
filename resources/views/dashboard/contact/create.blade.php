@@ -39,8 +39,8 @@
                             label="Tipe"
                             required
                         >
-                            <option {{ old('feature') == "Phone" ? "selected" : "" }} value="Phone">Telepon</option>
-                            <option {{ old('feature') == "Address" ? "selected" : "" }} value="Address">Alamat</option>
+                            <option {{ old('type') == "Phone" ? "selected" : "" }} value="Phone">Telepon</option>
+                            <option {{ old('type') == "Address" ? "selected" : "" }} value="Address">Alamat</option>
                         </x-tabler::form.input.select>
                     </div>
                     <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">

@@ -18,7 +18,7 @@
                 Edit Data
             </div>
             <h2 class="page-title">
-                Content Management System
+                Kontak
             </h2>
         </div>
     </x-slot>
@@ -40,8 +40,8 @@
                             label="Tipe"
                             required
                         >
-                            <option {{ $contact->feature == "Phone" ? "selected" : "" }} value="Phone">Telepon</option>
-                            <option {{ $contact->feature == "Address" ? "selected" : "" }} value="Address">Alamat</option>
+                            <option {{ $contact->type == "Phone" ? "selected" : "" }} value="Phone">Telepon</option>
+                            <option {{ $contact->type == "Address" ? "selected" : "" }} value="Address">Alamat</option>
                         </x-tabler::form.input.select>
                     </div>
                     <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
