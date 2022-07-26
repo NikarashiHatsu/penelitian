@@ -1,19 +1,23 @@
-<footer class="u-clearfix u-footer u-palette-1-base" id="sec-3af3">
+<footer class="u-clearfix u-footer u-palette-1-base !bg-blue-100 border-t border-t-blue-300" id="sec-3af3">
     <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
             <div class="u-gutter-0 u-layout">
                 <div class="u-layout-row">
                     <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-20 u-size-20-md u-layout-cell-1">
-                        <div class="u-container-layout u-valign-middle u-container-layout-1">
-                            <p class="u-small-text u-text u-text-variant u-text-1">
-                                {{ $footer_content }}
-                            </p>
+                        <div class="u-container-layout u-valign-top u-container-layout-1">
+                            <div class="flex gap-2">
+                                @foreach ($footer_small_logos as $footer_small_logo)
+                                    <div class="relative">
+                                        <img src="{{ $footer_small_logo->file }}" class="h-16 object-contain relative z-10" />
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
 
                     <div class="u-container-style u-layout-cell u-size-20 u-size-20-md u-layout-cell-2">
                         <div class="u-container-layout u-valign-middle u-container-layout-2">
-                            <img src="{{ asset('icon.png') }}" alt="" width="150" height="150" style="margin: 0 auto;">
+                            <img src="{{ $footer_logo }}" alt="" width="150" height="150" style="margin: 0 auto;">
                         </div>
                     </div>
 

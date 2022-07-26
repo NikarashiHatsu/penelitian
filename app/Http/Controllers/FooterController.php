@@ -38,7 +38,16 @@ class FooterController extends Controller
     public function store(StoreFooterRequest $request)
     {
         try {
-            Footer::create($request->validated());
+            $footer = Footer::create($request->validated());
+
+            if ($request->hasFile('file')) {
+                if ($request->hasFile('file')) {
+                    $footer->update([
+                        'filename' => $request->file('file')->getClientOriginalName(),
+                        'file' => $request->file('file')->storePublicly('footer'),
+                    ]);
+                }
+            }
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', 'Gagal menambahkan data footer: ' . $th->getMessage());
         }
@@ -70,6 +79,13 @@ class FooterController extends Controller
     {
         try {
             $footer->update($request->validated());
+
+            if ($request->hasFile('file')) {
+                $footer->update([
+                    'filename' => $request->file('file')->getClientOriginalName(),
+                    'file' => $request->file('file')->storePublicly('footer'),
+                ]);
+            }
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', 'Gagal mengubah data footer: ' . $th->getMessage());
         }

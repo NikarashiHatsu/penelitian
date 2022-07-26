@@ -38,6 +38,8 @@ class IndexController extends Controller
             'addresses' => Contact::where('type', 'Address')->get(),
 
             // Social Medias
+            'footer_logo' => Footer::where('type', 'Logo')->first()->file,
+            'footer_small_logos' => Footer::where('type', 'Logo Kecil')->orderByDesc('created_at')->get(),
             'footer_content' => Footer::where('type', 'Description')->first()->content,
             'facebook' =>  strip_tags(Footer::where('type', 'Facebook')->first()->content),
             'twitter' =>  strip_tags(Footer::where('type', 'Twitter')->first()->content),

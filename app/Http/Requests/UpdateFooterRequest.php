@@ -25,7 +25,8 @@ class UpdateFooterRequest extends FormRequest
     {
         return [
             'type' => ['required', 'string'],
-            'content' => ['required', 'string'],
+            'content' => ['nullable', 'required_unless:type,Logo, Logo Kecil', 'string'],
+            'file' => ['nullable', 'required_if:type,Logo,Logo Kecil'],
         ];
     }
 }

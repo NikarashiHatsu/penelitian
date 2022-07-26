@@ -30,21 +30,30 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('dashboard.footer.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.footer.store') }}" method="post" enctype="multipart/form-data" x-data="{ isImage: false }">
                 @csrf
                 <div class="row">
                     <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
                         <x-tabler::form.input.select
+                            x-on:change="isImage = ['Logo', 'Logo Kecil'].find((logo) => logo == $el.value) ? true : false"
                             name="type"
                             label="Tipe"
                             required
                         >
                             <option {{ old('type') == "Description" ? "selected" : "" }} value="Description">Deskripsi Footer</option>
+                            <option {{ old('type') == "Logo" ? "selected" : "" }} value="Logo">Logo Footer</option>
+                            <option {{ old('type') == "Logo Kecil" ? "selected" : "" }} value="Logo Kecil">Logo Kecil Footer</option>
                             <option {{ old('type') == "Facebook" ? "selected" : "" }} value="Facebook">Facebook</option>
                             <option {{ old('type') == "Twitter" ? "selected" : "" }} value="Twitter">Twitter</option>
                             <option {{ old('type') == "Instagram" ? "selected" : "" }} value="Instagram">Instagram</option>
                             <option {{ old('type') == "LinkedIn" ? "selected" : "" }} value="LinkedIn">LinkedIn</option>
                         </x-tabler::form.input.select>
+                    </div>
+                    <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3" x-show="isImage">
+                        <div class="mb-3">
+                            <label for="file" class="form-label">Logo</label>
+                            <input type="file" name="file" id="file" class="form-control">
+                        </div>
                     </div>
                     <div class="col-sm-12" x-show="!isImage">
                         <x-tabler::form.input.textarea

@@ -26,6 +26,16 @@ class FooterDataTable extends DataTable
             ->addColumn('action', 'dashboard.footer.action')
             ->addIndexColumn()
             ->setRowId('id')
+            ->editColumn('content', function(Footer $footer) {
+                if ($footer->type == "Logo" || $footer->type == "Logo Kecil") {
+                    return "<img style='width: 100px; height: 100px; object-fit: cover; border-radius: 4px;' src='{$footer->file}' />";
+                }
+
+                return $footer->content;
+            })
+            ->editColumn('created_at', function(Footer $footer) {
+                return $footer->created_at->isoFormat('LLL');
+            })
             ->rawColumns(['action', 'content']);
     }
 
@@ -52,7 +62,7 @@ class FooterDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Bfrtip')
-                    ->orderBy(1)
+                    ->orderBy(3)
                     ->buttons(
                         Button::make('create'),
                         Button::make('export'),
@@ -73,6 +83,7 @@ class FooterDataTable extends DataTable
             Column::computed('DT_RowIndex')->title('#'),
             Column::make('type')->title('Tipe'),
             Column::make('content')->title('Isi'),
+            Column::make('created_at')->title('Tanggal Input'),
             Column::computed('action')
                     ->exportable(false)
                     ->printable(false)

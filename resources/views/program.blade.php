@@ -1,7 +1,7 @@
 <section class="u-align-center u-clearfix u-grey-10 u-section-3" id="carousel_2ffc">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h2 class="u-text u-text-1">
-            Tujuan Penelitian Kami (isi lebih lengkap biar keliatan panjang)
+            Skema Penelitian
         </h2>
         <div class="u-expanded-width u-layout-grid u-list u-list-1">
             <div class="u-repeater u-repeater-1">
