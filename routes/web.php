@@ -20,6 +20,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
     Route::view('/', 'dashboard.index')->name('index');
     Route::resource('cms', \App\Http\Controllers\CmsController::class)->except('show')->parameter('cms', 'cms');
     Route::resource('cms.attachment', \App\Http\Controllers\AttachmentController::class)->only('destroy')->parameter('cms', 'cms');
+    Route::resource('contact', \App\Http\Controllers\ContactController::class)->except('show');
 });
 
 require __DIR__.'/auth.php';
