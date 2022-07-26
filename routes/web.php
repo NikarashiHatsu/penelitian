@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'under-construction')->name('index');
-Route::get('/landing-page', [\App\Http\Controllers\IndexController::class, 'landing_page'])->name('landing-page');
+Route::get('/', [\App\Http\Controllers\IndexController::class, 'landing_page'])->name('index');
+Route::view('/under-construction', 'under-construction')->name('index');
 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'auth'], function() {
     Route::view('/', 'dashboard.index')->name('index');
