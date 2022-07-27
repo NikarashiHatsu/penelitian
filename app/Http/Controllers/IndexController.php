@@ -31,7 +31,9 @@ class IndexController extends Controller
             'skema_penelitians' => SkemaPenelitian::all(),
 
             // Fokus Penelitian
-            'fokus_penelitians' => Focus::all(),
+            'section_title' => Focus::where('type', 'Judul Section')->first(),
+            'section_description' => Focus::where('type', 'Deskripsi Section')->first(),
+            'fokus_penelitians' => Focus::where('type', 'Gambar')->get(),
 
             // Visi Misi Tujuan
             'vision' => VisionMission::where('type', 'vision')->first()->description,

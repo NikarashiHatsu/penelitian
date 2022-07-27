@@ -30,10 +30,22 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('dashboard.focus.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.focus.store') }}" method="post" enctype="multipart/form-data" x-data="{ type: 'Judul Section' }">
                 @csrf
                 <div class="row">
                     <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
+                        <x-tabler::form.input.select
+                            x-on:change="type = $el.value"
+                            name="type"
+                            label="Tipe"
+                            required
+                        >
+                            <option {{ old('type') == "Judul Section" ? "selected" : "" }} value="Judul Section">Judul Section</option>
+                            <option {{ old('type') == "Deskripsi Section" ? "selected" : "" }} value="Deskripsi Section">Deskripsi Section</option>
+                            <option {{ old('type') == "Gambar" ? "selected" : "" }} value="Gambar">Gambar</option>
+                        </x-tabler::form.input.select>
+                    </div>
+                    <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3" x-show="type == 'Gambar'">
                         <div class="mb-3">
                             <label for="file" class="form-label">
                                 Gambar
@@ -41,16 +53,15 @@
                             <input type="file" name="file" id="file" class="form-control">
                         </div>
                     </div>
-                    <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3" x-show="type == 'Gambar' || type == 'Judul Section'">
                         <x-tabler::form.input.text
                             name="title"
                             label="Judul"
                             placeholder="Masukkan judul..."
                             value="{{ old('title') }}"
-                            required
                         />
                     </div>
-                    <div class="col-sm-12" x-show="!isImage">
+                    <div class="col-sm-12" x-show="type == 'Gambar' || type == 'Deskripsi Section'">
                         <x-tabler::form.input.textarea
                             name="description"
                             label="Isi"

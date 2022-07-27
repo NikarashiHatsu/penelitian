@@ -16,8 +16,10 @@ class Focus extends Model
         parent::boot();
 
         static::creating(function($model) {
-            $model->filename = request()->file('file')->getClientOriginalName();
-            $model->file = request()->file('file')->storePublicly('skema');
+            if (request()->hasFile('file')) {
+                $model->file = request()->file('file')->storePublicly('skema');
+                $model->filename = request()->file('file')->getClientOriginalName();
+            }
         });
     }
 
@@ -29,6 +31,7 @@ class Focus extends Model
     }
 
     protected $fillable = [
+        'type',
         'file',
         'filename',
         'title',

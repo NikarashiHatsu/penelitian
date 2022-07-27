@@ -55,7 +55,7 @@ class FocusController extends Controller
     public function edit(Focus $focus)
     {
         return view('dashboard.focus.edit', [
-            'skema_penelitian' => $focus,
+            'focus' => $focus,
         ]);
     }
 

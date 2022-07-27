@@ -27,6 +27,10 @@ class FocusDataTable extends DataTable
             ->addColumn('action', 'dashboard.focus.action')
             ->addIndexColumn()
             ->editColumn('file', function(Focus $focus) {
+                if ($focus->type != "Gambar") {
+                    return "-";
+                }
+
                 return "<img src='{$focus->file}' style='width: 100px; height: 100px; object-fit:cover; border-radius: 4px;' />";
             })
             ->setRowId('id')

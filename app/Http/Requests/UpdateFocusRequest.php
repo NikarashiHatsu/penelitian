@@ -24,9 +24,10 @@ class UpdateFocusRequest extends FormRequest
     public function rules()
     {
         return [
-            'file' => ['required', 'image', 'max:4096'],
-            'title' => ['required', 'string'],
-            'description' => ['required', 'string'],
+            'type' => ['required', 'string'],
+            'file' => ['nullable', 'image', 'max:4096'],
+            'title' => ['nullable', 'string'],
+            'description' => ['nullable', 'string'],
         ];
     }
 }

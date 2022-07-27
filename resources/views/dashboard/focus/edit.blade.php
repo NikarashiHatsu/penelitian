@@ -30,11 +30,23 @@
 
     <div class="card mb-3">
         <div class="card-body">
-            <form action="{{ route('dashboard.focus.update', $focus) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.focus.update', $focus) }}" method="post" enctype="multipart/form-data" x-data="{ type: '{{ $focus->type }}' }">
                 @csrf
                 @method('PUT')
                 <div class="row">
                     <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
+                        <x-tabler::form.input.select
+                            x-on:change="type = $el.value"
+                            name="type"
+                            label="Tipe"
+                            required
+                        >
+                            <option {{ $focus->type == "Judul Section" ? "selected" : "" }} value="Judul Section">Judul Section</option>
+                            <option {{ $focus->type == "Deskripsi Section" ? "selected" : "" }} value="Deskripsi Section">Deskripsi Section</option>
+                            <option {{ $focus->type == "Gambar" ? "selected" : "" }} value="Gambar">Gambar</option>
+                        </x-tabler::form.input.select>
+                    </div>
+                    <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3" x-show="type == 'Gambar'">
                         <div class="mb-3">
                             <label for="file" class="form-label">
                                 Gambar
@@ -42,21 +54,20 @@
                             <input type="file" name="file" id="file" class="form-control">
                         </div>
                     </div>
-                    <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3" x-show="type == 'Gambar' || type == 'Judul Section'">
                         <x-tabler::form.input.text
                             name="title"
                             label="Judul"
                             placeholder="Masukkan judul..."
-                            value="{{ $skema_penelitian->title }}"
-                            required
+                            value="{{ $focus->title }}"
                         />
                     </div>
-                    <div class="col-sm-12" x-show="!isImage">
+                    <div class="col-sm-12" x-show="type == 'Gambar' || type == 'Deskripsi Section'">
                         <x-tabler::form.input.textarea
                             name="description"
                             label="Isi"
                             placeholder="Masukkan isi..."
-                        >{{ $skema_penelitian->description }}</x-tabler::form.input.textarea>
+                        >{{ $focus->description }}</x-tabler::form.input.textarea>
                     </div>
                     <div class="col-sm-12 d-flex justify-content-end">
                         <button class="btn btn-primary">

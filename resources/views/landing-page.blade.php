@@ -27,6 +27,8 @@
 
     @include('fokus', [
         'fokus_penelitians' => $fokus_penelitians,
+        'section_title' => $section_title,
+        'section_description' => $section_description,
     ])
 
     @include('visi-misi-tujuan', [

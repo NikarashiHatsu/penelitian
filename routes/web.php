@@ -20,7 +20,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
     Route::view('/', 'dashboard.index')->name('index');
     Route::resource('hero', \App\Http\Controllers\HeroController::class)->except('show');
     Route::resource('skema-penelitian', \App\Http\Controllers\SkemaPenelitianController::class)->except('show');
-    Route::resource('focus', \App\Http\Controllers\FocusController::class)->except('show');
+    Route::resource('focus', \App\Http\Controllers\FocusController::class)->except('show')->parameter('focus', 'focus');
     Route::resource('vision-mission', \App\Http\Controllers\VisionMissionController::class)->except('show');
     Route::resource('cms', \App\Http\Controllers\CmsController::class)->except('show')->parameter('cms', 'cms');
     Route::resource('cms.attachment', \App\Http\Controllers\AttachmentController::class)->only('destroy')->parameter('cms', 'cms');
