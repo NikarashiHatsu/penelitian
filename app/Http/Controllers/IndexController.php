@@ -8,6 +8,7 @@ use App\Models\Focus;
 use App\Models\Footer;
 use App\Models\Gallery;
 use App\Models\Hero;
+use App\Models\Peneliti;
 use App\Models\SkemaPenelitian;
 use App\Models\VisionMission;
 use Illuminate\Http\Request;
@@ -39,6 +40,9 @@ class IndexController extends Controller
             'vision' => VisionMission::where('type', 'vision')->first()->description,
             'mission' => VisionMission::where('type', 'mission')->first()->description,
             'target' => VisionMission::where('type', 'target')->first()->description,
+
+            // Visi Misi Tujuan
+            'penelitis' => Peneliti::all(),
 
             // News
             'beritas' => Cms::where('feature', 'berita')->latest()->limit(6)->get(),

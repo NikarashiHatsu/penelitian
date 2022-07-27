@@ -22,6 +22,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'au
     Route::resource('skema-penelitian', \App\Http\Controllers\SkemaPenelitianController::class)->except('show');
     Route::resource('focus', \App\Http\Controllers\FocusController::class)->except('show')->parameter('focus', 'focus');
     Route::resource('vision-mission', \App\Http\Controllers\VisionMissionController::class)->except('show');
+    Route::resource('peneliti', \App\Http\Controllers\PenelitiController::class)->except('show');
     Route::resource('cms', \App\Http\Controllers\CmsController::class)->except('show')->parameter('cms', 'cms');
     Route::resource('cms.attachment', \App\Http\Controllers\AttachmentController::class)->only('destroy')->parameter('cms', 'cms');
     Route::resource('gallery', \App\Http\Controllers\GalleryController::class)->except('show');

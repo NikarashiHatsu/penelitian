@@ -10,6 +10,7 @@
     <script class="u-script" type="text/javascript" src="{{ asset('nicepage/js/nicepage.js') }}" defer=""></script>
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.css" integrity="sha512-ipO1yoQyZS3BeIuv2A8C5AwQChWt2Pi4KU3nUvXxc4TKr8QgG8dPexPAj2JGsJD6yelwKa4c7Y2he9TTkPM4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @vite(['resources/js/app.js', 'resources/css/app.css'])
 </head>
 
@@ -37,16 +38,20 @@
         'tujuan' => $target,
     ])
 
-    @include('peneliti')
+    @include('peneliti', [
+        'penelitis' => $penelitis,
+    ])
 
-    @include('berita', ['beritas' => $beritas])
+    @include('berita', [
+        'beritas' => $beritas
+    ])
 
     @include('galeri', [
         'gallery_description' => $gallery_description,
         'galleries' => $galleries,
     ])
 
-    @include('counter')
+    {{-- @include('counter') --}}
 
     @include('kontak', [
         'phones' => $phones,
@@ -62,5 +67,7 @@
         'instagram' => $instagram,
         'linkedIn' => $linkedIn,
     ])
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js" integrity="sha512-V1mUBtsuFY9SNr+ptlCQAlPkhsH0RGLcazvOCFt415od2Bf9/YkdjXxZCdhrP/TVYsPeAWuHa+KYLbjNbeEnWg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
