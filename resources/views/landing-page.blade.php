@@ -25,7 +25,9 @@
         'skema_penelitians' => $skema_penelitians,
     ])
 
-    @include('fokus')
+    @include('fokus', [
+        'fokus_penelitians' => $fokus_penelitians,
+    ])
 
     @include('visi-misi-tujuan', [
         'visi' => $vision,

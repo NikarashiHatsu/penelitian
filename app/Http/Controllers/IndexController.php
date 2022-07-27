@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cms;
 use App\Models\Contact;
+use App\Models\Focus;
 use App\Models\Footer;
 use App\Models\Gallery;
 use App\Models\Hero;
@@ -28,6 +29,9 @@ class IndexController extends Controller
 
             // Skema Penelitian
             'skema_penelitians' => SkemaPenelitian::all(),
+
+            // Fokus Penelitian
+            'fokus_penelitians' => Focus::all(),
 
             // Visi Misi Tujuan
             'vision' => VisionMission::where('type', 'vision')->first()->description,

@@ -55,6 +55,17 @@
                 <path d="M12 19h4.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h3.5"></path>
             </svg>' />
 
+        <x-tabler::layouts.menu title="Fokus Penelitain" :route="route('dashboard.focus.index')" :active="request()->routeIs('dashboard.focus.*')"
+            icon='<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-focus-2" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="12" cy="12" r=".5" fill="currentColor"></circle>
+                <circle cx="12" cy="12" r="7"></circle>
+                <line x1="12" y1="3" x2="12" y2="5"></line>
+                <line x1="3" y1="12" x2="5" y2="12"></line>
+                <line x1="12" y1="19" x2="12" y2="21"></line>
+                <line x1="19" y1="12" x2="21" y2="12"></line>
+            </svg>' />
+
         <x-tabler::layouts.menu title="CMS" :route="route('dashboard.cms.index')" :active="request()->routeIs('dashboard.cms.*')"
             icon='<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-text" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
