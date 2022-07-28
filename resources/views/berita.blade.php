@@ -24,7 +24,7 @@
                             @endif
                             <h4 class="u-text u-text-default u-text-palette-2-base u-text-3">{{ $berita->title }}</h4>
                             <p class="u-text u-text-palette-1-dark-2 u-text-4">{{ mb_strimwidth(strip_tags($berita->description), 0, 100, '...') }}</p>
-                            <a href="javascript:void(0)" class="u-active-palette-2-base u-border-2 u-border-active-white u-border-hover-white u-border-palette-2-base u-btn u-btn-round u-button-style u-hover-palette-2-base u-none u-radius-50 u-text-active-white u-text-body-color u-text-hover-white u-btn-1">
+                            <a href="{{ route('berita.show', $berita) }}" class="u-active-palette-2-base u-border-2 u-border-active-white u-border-hover-white u-border-palette-2-base u-btn u-btn-round u-button-style u-hover-palette-2-base u-none u-radius-50 u-text-active-white u-text-body-color u-text-hover-white u-btn-1">
                                 Baca
                             </a>
                         </div>
