@@ -15,7 +15,7 @@
                         <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
                             <img src="{{ $focus->file }}" class="w-48 h-48 rounded-full mx-auto object-cover" />
                             <h4 class="u-align-center u-text u-text-3">
-                                {{ $focus->title }}
+                                {!! $focus->title !!}
                             </h4>
                             <div class="prose-sm text-left prose-p:!text-sm prose-ul:list-disc">
                                 {!! $focus->description !!}

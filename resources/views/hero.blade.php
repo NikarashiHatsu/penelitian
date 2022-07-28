@@ -12,7 +12,9 @@
                 @endforeach
             </div>
 
-            <h1 class="u-text u-text-palette-1-base u-text-1" style="width: 600px;">{{ $hero_title }}</h1>
+            <h1 class="u-text u-text-palette-1-base u-text-1" style="width: 600px;">
+                {!! $hero->title !!}
+            </h1>
             <p class="u-text u-text-2">{!! $hero_description !!}</p>
             <a
                 href="https://nicepage.studio"
