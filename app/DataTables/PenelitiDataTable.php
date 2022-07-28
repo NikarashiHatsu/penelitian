@@ -24,7 +24,7 @@ class PenelitiDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'dashboard.skema-penelitian.action')
+            ->addColumn('action', 'dashboard.peneliti.action')
             ->addIndexColumn()
             ->editColumn('file', function(Peneliti $peneliti) {
                 return "<img src='{$peneliti->file}' style='width: 100px; height: 100px; object-fit:cover; border-radius: 4px;' />";
