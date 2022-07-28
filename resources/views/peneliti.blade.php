@@ -13,9 +13,9 @@
                             {{ $peneliti->name }}
                         </p>
 
-                        <p class="!text-sm md:!text-base text-white text-center !leading-relaxed md:leading-normal px-6 md:px-32">
+                        <div class="prose text-white !text-center mx-auto">
                             {!! $peneliti->detail !!}
-                        </p>
+                        </div>
 
                         <div class="u-align-left u-social-icons u-spacing-20 u-social-icons-1 mb-6">
                             <a class="u-social-url" href="javascript:void(0)"></a>
