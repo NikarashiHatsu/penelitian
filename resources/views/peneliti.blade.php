@@ -14,7 +14,7 @@
                         </p>
 
                         <p class="!text-sm md:!text-base text-white text-center !leading-relaxed md:leading-normal px-6 md:px-32">
-                            {{ $peneliti->detail }}
+                            {!! $peneliti->detail !!}
                         </p>
 
                         <div class="u-align-left u-social-icons u-spacing-20 u-social-icons-1 mb-6">
