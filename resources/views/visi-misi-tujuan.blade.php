@@ -14,7 +14,7 @@
                 </div>
                 <div
                     class="u-align-center u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle">
-                    <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
+                    <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2" style="background: #DDD; border-radius: 0 0 20px 20px;">
                         <h2 class="u-custom-font u-font-montserrat u-text u-text-4">02</h2>
                         <h5 class="u-custom-font u-font-montserrat u-text u-text-5">Misi</h5>
                         <p class="u-text u-text-9">
@@ -27,9 +27,9 @@
                     <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
                         <h2 class="u-custom-font u-font-montserrat u-text u-text-7">03</h2>
                         <h5 class="u-custom-font u-font-montserrat u-text u-text-8">Tujuan</h5>
-                        <p class="u-text u-text-9" style="color: white !important;">
+                        <div class="u-text u-text-9" style="color: white !important;">
                             {!! $tujuan !!}
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>
