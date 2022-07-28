@@ -12,9 +12,9 @@
                             <h4 class="u-text u-text-2">
                                 {{ $skema_penelitian->title }}
                             </h4>
-                            <p class="u-text u-text-3">
+                            <div class="prose-sm text-left prose-p:!text-sm prose-ul:list-disc">
                                 {!! $skema_penelitian->description !!}
-                            </p>
+                            </div>
                         </div>
                     </div>
                 @endforeach
