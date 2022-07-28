@@ -55,7 +55,7 @@ class PenelitiController extends Controller
     public function edit(Peneliti $peneliti)
     {
         return view('dashboard.peneliti.edit', [
-            'peneliti_penelitian' => $peneliti,
+            'peneliti' => $peneliti,
         ]);
     }
 
