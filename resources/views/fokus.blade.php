@@ -17,7 +17,7 @@
                             <h4 class="u-align-center u-text u-text-3">
                                 {{ $focus->title }}
                             </h4>
-                            <div class="prose">
+                            <div class="prose-sm text-left prose-p:!text-sm prose-ul:list-disc">
                                 {!! $focus->description !!}
                             </div>
                         </div>
