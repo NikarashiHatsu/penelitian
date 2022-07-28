@@ -24,7 +24,7 @@
                 <p class="u-text u-text-body-alt-color u-text-2">
                     {{ $gallery_description->description }}
                 </p>
-                <a href="javascript:void(0)" class="u-active-white u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-white u-none u-radius-50 u-text-active-palette-2-base u-text-body-alt-color u-text-hover-palette-2-base u-btn-2">
+                <a href="{{ route('gallery.index') }}" class="u-active-white u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-white u-none u-radius-50 u-text-active-palette-2-base u-text-body-alt-color u-text-hover-palette-2-base u-btn-2">
                     Lihat Selengkapnya
                 </a>
             </div>

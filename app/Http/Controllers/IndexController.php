@@ -65,4 +65,18 @@ class IndexController extends Controller
             'linkedIn' =>  strip_tags(Footer::where('type', 'LinkedIn')->first()->content),
         ]);
     }
+
+    public function detail_berita(Cms $cms)
+    {
+        return view('berita.show', [
+            'cms' => $cms,
+        ]);
+    }
+
+    public function galeri()
+    {
+        return view('galeri.index', [
+            'galleries' => Gallery::where('type', 'Image')->orderByDesc('created_at')->get(),
+        ]);
+    }
 }

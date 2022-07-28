@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\IndexController::class, 'landing_page'])->name('index');
 // Route::view('/under-construction', 'under-construction')->name('index');
-Route::get('/berita/{cms}', [\App\Http\Controllers\BeritaController::class, 'show'])->name('berita.show');
+Route::get('/berita/{cms}', [\App\Http\Controllers\IndexController::class, 'detail_berita'])->name('berita.show');
+Route::get('/galeri', [\App\Http\Controllers\IndexController::class, 'galeri'])->name('gallery.index');
 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'auth'], function() {
     Route::view('/', 'dashboard.index')->name('index');
