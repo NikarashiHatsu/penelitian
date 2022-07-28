@@ -6,7 +6,7 @@
         <div class="u-expanded-width u-layout-grid u-list u-list-1">
             <div class="u-repeater u-repeater-1">
                 @foreach ($skema_penelitians as $index => $skema_penelitian)
-                    <div class="u-align-center u-border-20 u-border-no-bottom u-border-no-left u-border-no-right u-border-palette-{{ $index }}-base u-bottom-left-radius-20 u-bottom-right-radius-20 u-container-style u-custom-item u-list-item u-repeater-item u-shape-round u-white u-list-item-1">
+                    <div class="u-align-center u-border-20 u-border-no-bottom u-border-no-left u-border-no-right u-border-palette-{{ $index + 1 }}-base u-bottom-left-radius-20 u-bottom-right-radius-20 u-container-style u-custom-item u-list-item u-repeater-item u-shape-round u-white u-list-item-1">
                         <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
                             <img src="{{ $skema_penelitian->file }}" class="w-40 h-40 mx-auto rounded-full object-cover" />
                             <h4 class="u-text u-text-2">
