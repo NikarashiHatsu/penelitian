@@ -24,7 +24,7 @@ class UpdateSkemaPenelitianRequest extends FormRequest
     public function rules()
     {
         return [
-            'file' => ['required', 'image', 'max:4096'],
+            'file' => ['nullable', 'image', 'max:4096'],
             'title' => ['required', 'string'],
             'description' => ['required', 'string'],
         ];
