@@ -12,6 +12,12 @@
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.css" integrity="sha512-ipO1yoQyZS3BeIuv2A8C5AwQChWt2Pi4KU3nUvXxc4TKr8QgG8dPexPAj2JGsJD6yelwKa4c7Y2he9TTkPM4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @vite(['resources/js/app.js', 'resources/css/app.css'])
+    <style>
+        .u-section-10 .u-image-1 {
+            background-color: white;
+            background-image: url("{{ asset('images/womanintech.png') }}");
+        }
+    </style>
 </head>
 
 <body class="u-body u-xl-mode" style="font-size: 16px;">
