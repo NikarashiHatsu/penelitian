@@ -30,7 +30,7 @@
 
     <div class="card mb-3">
         <div class="card-body">
-            <form action="{{ route('dashboard.skema-penelitian.update', $skemaPenelitian) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.skema-penelitian.update', $skema_penelitian) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="row">
