@@ -39,9 +39,9 @@
                             label="Tipe"
                             required
                         >
-                            <option {{ old('type') == "Vision" ? "selected" : "" }} value="Vision">Visi</option>
-                            <option {{ old('type') == "Mission" ? "selected" : "" }} value="Mission">Misi</option>
-                            <option {{ old('type') == "Target" ? "selected" : "" }} value="Target">Tujuan</option>
+                            <option {{ old('type') == "Vision" ? "selected" : "" }} value="Vision">2016-2020</option>
+                            <option {{ old('type') == "Mission" ? "selected" : "" }} value="Mission">2021-2025</option>
+                            <option {{ old('type') == "Target" ? "selected" : "" }} value="Target">2026-2030</option>
                         </x-tabler::form.input.select>
                     </div>
                     <div class="col-sm-12">

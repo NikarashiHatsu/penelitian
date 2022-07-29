@@ -28,9 +28,9 @@ class VisionMissionDataTable extends DataTable
             ->setRowId('id')
             ->editColumn('type', function(VisionMission $visionMission) {
                 switch ($visionMission->type) {
-                    case 'Vision': return 'Visi'; break;
-                    case 'Mission': return 'Misi'; break;
-                    case 'Target': return 'Tujuan'; break;
+                    case 'Vision': return '2016-2020'; break;
+                    case 'Mission': return '2021-2025'; break;
+                    case 'Target': return '2026-2030'; break;
                 }
             })
             ->rawColumns(['action', 'description']);

@@ -40,9 +40,9 @@
                             label="Tipe"
                             required
                         >
-                            <option {{ $visionMission->type == "Vision" ? "selected" : "" }} value="Vision">Visi</option>
-                            <option {{ $visionMission->type == "Mission" ? "selected" : "" }} value="Mission">Misi</option>
-                            <option {{ $visionMission->type == "Target" ? "selected" : "" }} value="Target">Tujuan</option>
+                            <option {{ $visionMission->type == "Vision" ? "selected" : "" }} value="Vision">2016-2020</option>
+                            <option {{ $visionMission->type == "Mission" ? "selected" : "" }} value="Mission">2021-2025</option>
+                            <option {{ $visionMission->type == "Target" ? "selected" : "" }} value="Target">2026-2030</option>
                         </x-tabler::form.input.select>
                     </div>
                     <div class="col-sm-12">
