@@ -7,9 +7,9 @@
                     <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
                         <h2 class="u-custom-font u-font-montserrat u-text u-text-1">01</h2>
                         <h5 class="u-custom-font u-font-montserrat u-text u-text-2">Visi</h5>
-                        <p class="u-text u-text-9" style="color: white !important;">
+                        <div class="prose-sm text-left prose-p:!text-sm prose-ul:list-disc !text-white">
                             {!! $visi !!}
-                        </p>
+                        </div>
                     </div>
                 </div>
                 <div
@@ -17,9 +17,9 @@
                     <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2" style="background: #DDD; border-radius: 0 0 20px 20px;">
                         <h2 class="u-custom-font u-font-montserrat u-text u-text-4">02</h2>
                         <h5 class="u-custom-font u-font-montserrat u-text u-text-5">Misi</h5>
-                        <p class="u-text u-text-9">
+                        <div class="prose-sm text-left prose-p:!text-sm prose-ul:list-disc">
                             {!! $misi !!}
-                        </p>
+                        </div>
                     </div>
                 </div>
                 <div
@@ -27,7 +27,7 @@
                     <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
                         <h2 class="u-custom-font u-font-montserrat u-text u-text-7">03</h2>
                         <h5 class="u-custom-font u-font-montserrat u-text u-text-8">Tujuan</h5>
-                        <div class="u-text u-text-9" style="color: white !important;">
+                        <div class="prose-sm text-left prose-p:!text-sm prose-ul:list-disc !text-white">
                             {!! $tujuan !!}
                         </div>
                     </div>
