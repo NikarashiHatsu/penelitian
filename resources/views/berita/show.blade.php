@@ -37,7 +37,7 @@
             @endif
 
             <div class="bg-white p-6 mt-8 rounded-xl shadow-xl">
-                <div class="prose-sm md:prose text-gray-600">
+                <div class="prose-sm md:prose text-gray-600 prose-figure:aspect-w-16 prose-figure:aspect-h-9">
                     <h1>
                         {{ $cms->title }}
                     </h1>
@@ -53,5 +53,22 @@
             </div>
         </div>
     </div>
+    <script>
+        document.querySelectorAll("figure > oembed").forEach(function(oembed) {
+            let url = oembed.getAttribute('url').replace('watch?v=', 'embed/');
+            let newElement = `
+                <iframe
+                    width="560"
+                    height="315"
+                    src="${url}"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            `;
+            oembed.outerHTML = newElement;
+        });
+    </script>
 </body>
 </html>
